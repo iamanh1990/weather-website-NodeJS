@@ -10,7 +10,9 @@ const forecast = (lattitude, longitude, callback) => {
 			callback('Not found. Please try another search term');
 		} else {
 			const data = `It is currently ${body.current.temperature} degrees out, feels like ${body.current
-				.feelslike} degrees out. The weather is ${body.current.weather_descriptions[0]}`;
+				.feelslike} degrees out. The weather is ${body.current
+				.weather_descriptions[0]}. The current temperature is ${body.current
+				.temperature} with the humidity of ${body.current.humidity}%`;
 			callback(undefined, data);
 		}
 	});
